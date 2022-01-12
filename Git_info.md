@@ -96,3 +96,6 @@ git commit -m "my snapshot"
 
 # push changes to github
 git push --set-upstream origin my-branch
+
+# removing a file 
+git rm -r <file>
