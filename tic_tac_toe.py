@@ -1,4 +1,10 @@
+####
+# titc_tac_toe project
+# Matthew Goodsell
+####
+
 import random
+
 
 def main():
 
@@ -91,13 +97,13 @@ def draw_board(board_list):
     # for i in range(0,9):
     #     print(f'{board_spots[i]}|{board_spots[i]}|{board_spots[i]}')
     #     print('_+_+_')
-    print(board_list)
+    #print(board_list)
         
-    # print(f'{board_list[0]}|{board_list[1]}|{board_list[2]}')
-    # print('_+_+_')
-    # print(f'{board_list[3]}|{board_list[4]}|{board_list[5]}')
-    # print('_+_+_')
-    # print(f'{board_list[6]}|{board_list[7]}|{board_list[8]}')
+    print(f'{board_list[0]}|{board_list[1]}|{board_list[2]}')
+    print('_+_+_')
+    print(f'{board_list[3]}|{board_list[4]}|{board_list[5]}')
+    print('_+_+_')
+    print(f'{board_list[6]}|{board_list[7]}|{board_list[8]}')
 
 def board_spots(board_list, player_1=None, player_2=None):
     '''
