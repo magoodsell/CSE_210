@@ -27,6 +27,8 @@ class Director:
         for i in range(5):
             die = Die()
             self.dice.append(die)
+        
+        # print(self.dice)
 
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -59,9 +61,12 @@ class Director:
 
         for i in range(len(self.dice)):
             die = self.dice[i]
+            # print(die)
             die.roll()
             self.score += die.points 
+            # print(self.score)
         self.total_score += self.score
+        # print(self.total_score)
 
     def do_outputs(self):
         """Displays the dice and the score. Also asks the player if they want to roll again. 
