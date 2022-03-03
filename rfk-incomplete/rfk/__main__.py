@@ -21,7 +21,7 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-CAPTION = "Robot Finds Kitten"
+CAPTION = "Greed"
 DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
 DEFAULT_ARTIFACTS = 40
@@ -31,10 +31,13 @@ def main():
     
     # create the cast
     cast = Cast()
+
+    total_score = 0 
     
-    # create the banner
+    # create the banner or text
     banner = Actor()
-    banner.set_text("")
+    #banner.set_text(total_score)
+    banner.set_text(f'Score: {total_score}')
     banner.set_font_size(FONT_SIZE)
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
@@ -42,7 +45,7 @@ def main():
     
     # create the robot
     x = int(MAX_X / 2)
-    y = int(MAX_Y / 2)
+    y = int(MAX_Y / -40) # makes the robot show at the bottom.
     position = Point(x, y)
 
     robot = Actor()
@@ -57,12 +60,16 @@ def main():
         data = file.read()
         messages = data.splitlines()
 
+    seq = [42, 111]
     for n in range(DEFAULT_ARTIFACTS):
-        text = chr(random.randint(33, 126))
+        text = chr(random.choice(seq))
+        #text = chr(random.randint(33, 126))
         message = messages[n]
 
         x = random.randint(1, COLS - 1)
-        y = random.randint(1, ROWS - 1)
+        #y = random.randint(1, ROWS - 1)
+        #y = 0
+        y = random.randint(1,5)
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
@@ -70,6 +77,11 @@ def main():
         g = random.randint(0, 255)
         b = random.randint(0, 255)
         color = Color(r, g, b)
+
+        # creating the velocity 
+        x_v = 0
+        y_v = 2
+        velocity = Point(x_v, y_v)
         
         artifact = Artifact()
         artifact.set_text(text)
@@ -77,6 +89,8 @@ def main():
         artifact.set_color(color)
         artifact.set_position(position)
         artifact.set_message(message)
+        artifact._velocity = velocity
+        artifact.move_next(MAX_X, MAX_Y)
         cast.add_actor("artifacts", artifact)
     
     # start the game

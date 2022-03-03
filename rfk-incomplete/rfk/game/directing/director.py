@@ -17,6 +17,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        self._total_score = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -49,17 +50,31 @@ class Director:
         """
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
-        artifacts = cast.get_actors("artifacts")
+        artifacts = cast.get_actors("artifacts") #returns a list of artifacts
 
-        banner.set_text("")
+        #banner.set_text(self._total_score)
+        banner.set_text(f'Score: {self._total_score}')
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
+
+        #artifacts.move_next(max_x, max_y)
         
+        # becuase it is a list it has to loop through. 
+        score = 0
         for artifact in artifacts:
+            artifact.move_next(max_x, max_y)
             if robot.get_position().equals(artifact.get_position()):
-                message = artifact.get_message()
-                banner.set_text(message)    
+                #message = artifact.get_message()
+                # if artifact == '*':
+                #     self._total_score -= 75
+                # elif artifact == 'o':
+                #     self._total_score += 100
+                banner.set_text(self._total_score)
+        # call get_text to get the updated score
+            # probably need a attribute and getter and setter for total_score
+
+
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.

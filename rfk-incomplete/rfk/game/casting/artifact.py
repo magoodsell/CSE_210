@@ -16,7 +16,7 @@ class Artifact(Actor):
 
         # invoking the parent class constructor. 
         super().__init__() 
-        self._message = ''
+        self._message = 0
 
     def get_message(self):
         return self._message
