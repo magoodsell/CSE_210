@@ -74,6 +74,7 @@ class Actor:
             max_y (int): The maximum y value.
         """
         x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
+        # x = 0
         y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
         self._position = Point(x, y)
 

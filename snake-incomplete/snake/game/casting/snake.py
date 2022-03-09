@@ -43,6 +43,7 @@ class Snake(Actor):
     def grow_tail(self, number_of_segments):
         # number_of_segments is the value of the food it eats
         for i in range(number_of_segments):
+            # get the last segment and its velocity and then reverse it to add a segment.
             tail = self._segments[-1]
             velocity = tail.get_velocity()
             offset = velocity.reverse()
@@ -65,8 +66,8 @@ class Snake(Actor):
 
         for i in range(constants.SNAKE_LENGTH):
             # creating the body of the snake 
-            position = Point(x - i * constants.CELL_SIZE, y) # subtract i moves to the left 
-            velocity = Point(1 * constants.CELL_SIZE, 0)
+            position = Point(x, y + i * constants.CELL_SIZE)
+            velocity = Point(0, -1 * constants.CELL_SIZE) # puts a space between each segment unless it is -1
             text = "8" if i == 0 else "#"
             color = constants.YELLOW if i == 0 else constants.GREEN
             

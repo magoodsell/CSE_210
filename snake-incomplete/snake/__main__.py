@@ -22,6 +22,7 @@ def main():
     cast = Cast()
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake())
+    # create a new instance of the snake. 
     cast.add_actor("scores", Score())
    
     # start the game
@@ -30,7 +31,7 @@ def main():
 
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
-    script.add_action("update", MoveActorsAction())
+    script.add_action("update", MoveActorsAction()) 
     script.add_action("update", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
     
