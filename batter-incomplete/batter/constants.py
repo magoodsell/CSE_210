@@ -21,14 +21,14 @@ FIELD_LEFT = 0
 FIELD_RIGHT = SCREEN_WIDTH
 
 # FONT
-FONT_FILE = "batter/assets/fonts/zorque.otf"
+FONT_FILE = "CSE_210/batter-incomplete/batter/assets/fonts/zorque.otf"
 FONT_SMALL = 32
 FONT_LARGE = 48
 
 # SOUND
-BOUNCE_SOUND = "batter/assets/sounds/boing.wav"
-WELCOME_SOUND = "batter/assets/sounds/start.wav"
-OVER_SOUND = "batter/assets/sounds/over.wav"
+BOUNCE_SOUND = "CSE_210/batter-incomplete/batter/assets/sounds/boing.wav"
+WELCOME_SOUND = "CSE_210/batter-incomplete/batter/assets/sounds/start.wav"
+OVER_SOUND = "CSE_210/batter-incomplete/batter/assets/sounds/over.wav"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -55,7 +55,7 @@ IN_PLAY = 3
 GAME_OVER = 4
 
 # LEVELS
-LEVEL_FILE = "batter/assets/data/level-{:03}.txt"
+LEVEL_FILE = "CSE_210/batter-incomplete/batter/assets/data/level-{:03}.txt"
 BASE_LEVELS = 5
 
 # -------------------------------------------------------------------------------------------------- 
@@ -79,26 +79,31 @@ RELEASE = 6
 STATS_GROUP = "stats"
 DEFAULT_LIVES = 3
 MAXIMUM_LIVES = 5
+DEFAULT_SCORE = 0 
+DEFAULT_LEVEL = 1
 
 # HUD
 HUD_MARGIN = 15
 LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
 SCORE_GROUP = "score"
+# LEVEL_FORMAT = f"LEVEL: {DEFAULT_LEVEL}"
 LEVEL_FORMAT = "LEVEL: {}"
+# LIVES_FORMAT = f"LIVES: {DEFAULT_LIVES}"
 LIVES_FORMAT = "LIVES: {}"
+# SCORE_FORMAT = f"SCORE: {DEFAULT_SCORE}"
 SCORE_FORMAT = "SCORE: {}"
 
 # BALL
 BALL_GROUP = "balls"
-BALL_IMAGE = "batter/assets/images/000.png"
+BALL_IMAGE = "CSE_210/batter-incomplete/batter/assets/images/000.png"
 BALL_WIDTH = 28
 BALL_HEIGHT = 28
 BALL_VELOCITY = 6
 
 # RACKET
 RACKET_GROUP = "rackets"
-RACKET_IMAGES = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
+RACKET_IMAGES = [f"CSE_210/batter-incomplete/batter/assets/images/{n:03}.png" for n in range(100, 103)]
 RACKET_WIDTH = 106
 RACKET_HEIGHT = 28
 RACKET_RATE = 6
@@ -107,10 +112,10 @@ RACKET_VELOCITY = 7
 # BRICK
 BRICK_GROUP = "bricks"
 BRICK_IMAGES = {
-    "b": [f"batter/assets/images/{i:03}.png" for i in range(10,19)],
-    "g": [f"batter/assets/images/{i:03}.png" for i in range(20,29)],
-    "p": [f"batter/assets/images/{i:03}.png" for i in range(30,39)],
-    "y": [f"batter/assets/images/{i:03}.png" for i in range(40,49)]
+    "b": [f"CSE_210/batter-incomplete/batter/assets/images/{i:03}.png" for i in range(10, 19)],
+    "g": [f"CSE_210/batter-incomplete/batter/assets/images/{i:03}.png" for i in range(20, 29)],
+    "p": [f"CSE_210/batter-incomplete/batter/assets/images/{i:03}.png" for i in range(30, 39)],
+    "y": [f"CSE_210/batter-incomplete/batter/assets/images/{i:03}.png" for i in range(40, 49)]
 }
 BRICK_WIDTH = 80
 BRICK_HEIGHT = 28

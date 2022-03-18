@@ -1,7 +1,7 @@
 from game.scripting.action import Action
 
 
-class Script:
+class Script(Action):
     """A collection of actions."""
 
     def __init__(self):
